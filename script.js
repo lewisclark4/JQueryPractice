@@ -34,5 +34,31 @@ $(document).ready(function() {
    }, function() {
         $(this).fadeTo(100, 1);
    });
+
+    $("p").on("click", function() {
+        $(this).children('a').css('background-color', 'yellow');
+   });
+
+   $(".card_image").on("click", function() {
+        $(this).next().children('p').slideDown();
+   });
+
+    $(".card_image").on("click", function() {
+        $(this).siblings('p').slideDown();
+   });
+
+   $(".card").on("click", function() {
+        $(this).toggleClass('card-highlight');
+   });
+
+   $("#select_btn").on("click", function() {
+        $('.card:not(.card-highlight)').hide();;
+   });
+
+   $("#all_btn").on("click", function() {
+        $('.card').show();
+   });
+   
+   
 }); 
 
